@@ -113,3 +113,20 @@ python scripts/analyze_url.py 'https://...'
 ## Próxima evolución recomendada
 
 La segunda iteración debería agregar un **corpus chileno anotado** y un benchmark por clase (precision, recall, F1 exact-span, error PN/PJ), además de entity resolution histórico para unir menciones de la misma persona o institución entre múltiples noticias.
+
+## Fallback automático si OpenAI no tiene créditos
+
+La app **no depende** de que OpenAI esté disponible para completar un análisis.
+
+Si la API devuelve `429 insufficient_quota`, `credit_balance_exhausted`, un rate limit, un error de autenticación o una respuesta estructurada inválida:
+
+1. el workflow **no falla**;
+2. conserva las entidades obtenidas por GLiNER2;
+3. aplica las reglas y validadores determinísticos;
+4. genera `docs/data/latest.json` normalmente;
+5. registra `engine.llm_fallback=true` y una explicación en `engine.llm_error`;
+6. el dashboard muestra que el análisis se ejecutó en modo local/fallback.
+
+Por lo tanto, puedes dejar `USE_LLM=true`: cuando haya saldo y la API responda, el LLM adjudicará; cuando no esté disponible, la app continuará con GLiNER2 + reglas.
+
+> La suscripción de ChatGPT y la facturación de la API son servicios separados. Tener ChatGPT Plus no implica disponer de créditos de API.

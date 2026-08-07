@@ -1,6 +1,6 @@
 [project]
 name = "ner-prensa-github"
-version = "0.1.0"
+version = "0.1.1"
 description = "Extractor híbrido de entidades para noticias: GLiNER2 + reglas + LLM Structured Output"
 requires-python = ">=3.11"
 dependencies = [
