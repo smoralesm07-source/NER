@@ -12,6 +12,14 @@ async function loadData(){
 function esc(v=''){return String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 function render(){
   const a=DATA.article;
+  const engine=DATA.engine||{};
+  const status=document.querySelector('#engineStatus');
+  if(status){
+    const llmError=engine.llm_error||'';
+    if(llmError){ status.hidden=false; status.textContent='Modo local/fallback: '+llmError; }
+    else if(engine.llm){ status.hidden=false; status.textContent='Análisis híbrido: GLiNER2 + reglas + LLM.'; }
+    else { status.hidden=false; status.textContent='Análisis local: GLiNER2 + reglas.'; }
+  }
   document.querySelector('#title').textContent=a.title||'Noticia analizada';
   document.querySelector('#meta').textContent=[a.site_name,a.date,a.author].filter(Boolean).join(' · ');
   const link=document.querySelector('#sourceLink'); link.href=a.url||'#'; link.style.display=a.url?'inline-block':'none';
