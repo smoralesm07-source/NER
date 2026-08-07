@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="light" />
+  <title>Analizador NER de Prensa</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">ANÁLISIS DE PRENSA · EXTRACCIÓN DE ENTIDADES</p>
+      <h1>Analizador NER</h1>
+      <p class="subtitle">Personas, entidades jurídicas, organismos, lugares y relaciones con trazabilidad al texto original.</p>
+    </div>
+    <span class="badge">GitHub · Hybrid NER</span>
+  </header>
+
+  <main>
+    <section class="submit card">
+      <div class="submit-copy">
+        <span class="section-label">NUEVO ANÁLISIS</span>
+        <h2>Pega el link de una noticia</h2>
+        <p>La solicitud se procesa en GitHub Actions para mantener modelos y API keys fuera del navegador.</p>
+      </div>
+      <div class="url-form">
+        <input id="newsUrl" type="url" placeholder="https://medio.cl/noticia/..." autocomplete="off" />
+        <button class="button" id="analyzeBtn">Analizar noticia</button>
+      </div>
+      <div class="form-note" id="formNote">El botón abrirá una solicitud prellenada en el repositorio. Sólo el propietario puede activar el motor.</div>
+    </section>
+
+    <section class="hero card">
+      <div>
+        <span class="section-label">ÚLTIMO ANÁLISIS</span>
+        <h2 id="title">Cargando…</h2>
+        <div class="meta" id="meta"></div>
+      </div>
+      <div class="actions">
+        <a id="sourceLink" class="button secondary" href="#" target="_blank" rel="noopener">Abrir fuente</a>
+        <button class="button" id="refreshBtn">Actualizar resultados</button>
+      </div>
+    </section>
+
+    <section class="metrics" id="metrics"></section>
+
+    <section class="layout">
+      <div class="card panel">
+        <div class="panel-head">
+          <div>
+            <span class="section-label">ENTIDADES</span>
+            <h3>Entidades identificadas</h3>
+          </div>
+          <div class="filters">
+            <select id="typeFilter"><option value="">Todos los tipos</option></select>
+            <select id="confidenceFilter">
+              <option value="">Toda confianza</option>
+              <option>ALTA</option><option>MEDIA</option><option>BAJA</option>
+            </select>
+          </div>
+        </div>
+        <div id="entities" class="entity-list"></div>
+      </div>
+
+      <aside class="card panel side">
+        <span class="section-label">AUDITORÍA</span>
+        <h3>Trazabilidad</h3>
+        <div id="detail" class="empty">Selecciona una entidad para ver clasificación, señales y evidencia exacta.</div>
+      </aside>
+    </section>
+
+    <section class="layout lower">
+      <div class="card panel">
+        <span class="section-label">RELACIONES</span>
+        <h3>Vínculos explícitos</h3>
+        <div id="relations" class="relations"></div>
+      </div>
+      <div class="card panel">
+        <span class="section-label">ARTÍCULO</span>
+        <h3>Texto extraído</h3>
+        <div id="articleText" class="article-text"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>Motor híbrido: GLiNER2 + reglas determinísticas + LLM Structured Output opcional.</footer>
+  <script src="app.js"></script>
+</body>
+</html>
