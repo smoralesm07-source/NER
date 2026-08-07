@@ -1,14 +1,512 @@
 {
   "article": {
-    "url": "",
-    "title": "Aún no hay una noticia analizada",
-    "author": "",
-    "date": "",
-    "site_name": "",
-    "text": "Ejecuta el workflow ‘Analizar noticia’ desde la pestaña Actions y pega la URL. El resultado aparecerá aquí automáticamente."
+    "url": "https://www.elmostrador.cl/noticias/opinion/editorial/2026/06/05/lavado-de-activos-y-crimen-organizado-en-chile-el-caso-de-la-operacion-tokio/",
+    "title": "Lavado de activos y crimen organizado en Chile: el caso de la “Operación Tokio”",
+    "author": "El Mostrador",
+    "date": "2026-06-05",
+    "site_name": "El Mostrador",
+    "text": "Lavado de activos y crimen organizado en Chile: el caso de la “Operación Tokio”\nEs imprescindible tomarse en serio el sistema antilavado de activos, fortaleciendo –entre otras medidas urgentes- las capacidades de la Unidad de Análisis Financiero (UAF), creada hace 23 años en un contexto criminal muy distinto al de hoy.\nLa Fiscalía Metropolitana Sur informó recientemente sobre resultados concretos de la denominada “Operación Tokio”, iniciada a raíz del quíntuple asesinato ocurrido en 2024 en una parcela en Lampa, crimen en el cual una de las partícipes perdió un teléfono celular, aparato convertido en el hilo de Ariadna que permitió ir armando el mapa del lavado de activos de “Los Piratas de Aragua”, misma facción del Tren de Aragua (TDA) implicada, entre otros hechos, en el secuestro y homicidio del teniente venezolano Ronald Ojeda.\nEl fiscal Héctor Barros, a cargo de la investigación, informó que las eficientes indagatorias realizadas con la PDI han evidenciado hasta ahora la ejecución de movimientos financieros –solo por ese brazo del TDA– cercanos a los 80 millones de dólares. De estos, prácticamente todos fueron incorporados a la economía formal por medio de cuentas bancarias chilenas, desde donde eran diseminados hacia otros países, principalmente Colombia, utilizando para ello aplicaciones de criptomonedas que cualquier persona puede descargar desde su teléfono.\nNo es la primera vez que se escucha algo semejante. El año pasado otra investigación, relacionada con células del TDA que operaban en tres regiones del país, determinó la existencia de movimientos bancarios del mismo tipo, por 13.5 millones de dólares y que, se estima, pueden llegar a más de US$ 30 millones.\nSegún un estudio de la Fiscalía de Antofagasta, en 2025 se proyectaba que el crimen organizado generaría utilidades netas por 4 mil millones de dólares en Chile, en un negocio cuyo margen de ganancia fluctúa entre el 30 y el 40 por ciento de lo invertido.\nLo más preocupante, en el caso de la “Operación Tokio”, es que hubo cinco bancos locales involucrados, siendo el principal de ellos el Santander, infiltrado por el Tren de Aragua a través de uno de los detenidos, que era un funcionario de dicha empresa. Para lavar activos de origen ilícito, este sujeto gestionaba cuentas en otras entidades bancarias: BCI, BancoEstado, Scotiabank y Banco Falabella.\nHacer transitar 80 millones de dólares por medio de la banca requiere de mucha experticia en el funcionamiento del sistema. También, de muchas personas dispuestas a abrir cuentas para que dineros obtenidos gracias a la extorsión, el secuestro, el sicariato, el tráfico de drogas o el comercio sexual se integren al sistema formal. Además, es menester la existencia de una intrincada red de empresas de papel y cuentas de criptomonedas en el extranjero, que es la forma que esta organización criminal, y otras que operan en Chile, utilizan para extraer sus ganancias y trasladarlas a otros países.\nEl crimen organizado cuenta con la capacidad para hacerlo. Tiene abogados y contadores, y cada vez se hace más evidente la corrupción que ha ido permeando poco a poco a ambas policías, así como a Gendarmería, Fuerzas Armadas y también la Fiscalía. Hablamos acá de los órganos que constituyen la primera línea de contención, una barrera que se advierte cada vez más porosa.\nHoy en día, el Sistema Nacional Antilavado de Activos y contra el Financiamiento del Terrorismo se basa principalmente en los reportes enviados por las instituciones financieras a la Unidad de Análisis Financiero (UAF): los llamados Reportes de Operaciones Sospechosas (ROS) y Reportes de Operaciones en Efectivo (ROE). Sin embargo, la UAF ya cumple 23 años y cuenta con poco personal y escasos recursos. Además, se trata de un organismo diseñado en un mundo donde el lavado de activos no se realizaba por medio de criptomonedas o a través de la apertura de cientos de tarjetas de débito o crédito online, como sucede actualmente, y donde tampoco existían bandas transnacionales de crimen organizado asentadas en todas las regiones de Chile.\nPor ello, claramente se necesita revisar las capacidades de la UAF, sacarla del alero del Ministerio de Hacienda y ponerla bajo el del Ministerio de Seguridad Pública. Se requiere también dotarla de mayores capacidades o, de lo contrario, su cooperación al sistema nacional de inteligencia será insuficiente.\nAsimismo, se torna imprescindible que el Servicio de Impuestos Internos (SII) se querelle en todos los casos en que se utilizan empresas de fachada para lavar activos o justificar ingresos ilegales. Hasta la fecha, solo se sabe –al menos públicamente– de una acción legal de este tipo, interpuesta por el SII contra un contador vinculado a la banda de “Los Trinitarios”.\nY es que a estas alturas seguir dependiendo de las capacidades de los bancos en lo que a reportes ROS y ROE se refiere, resulta a todas luces insuficiente y de una peligrosa candidez."
   },
-  "entities": [],
+  "entities": [
+    {
+      "mention": "Banco Falabella",
+      "canonical_name": "Banco Falabella",
+      "type": "INSTITUCION_FINANCIERA",
+      "subtype": "Entidad financiera",
+      "role": "",
+      "evidence": "o de dicha empresa. Para lavar activos de origen ilícito, este sujeto gestionaba cuentas en otras entidades bancarias: BCI, BancoEstado, Scotiabank y Banco Falabella. Hacer transitar 80 millones de dólares por medio de la banca requiere de mucha experticia en el funcionamiento del sistema. También, de muchas perso",
+      "aliases": [],
+      "start_char": 2341,
+      "end_char": 2356,
+      "confidence": "ALTA",
+      "signals": [
+        "gliner2",
+        "patron_entidad_financiera",
+        "span_exactamente_validado"
+      ]
+    },
+    {
+      "mention": "Fiscalía",
+      "canonical_name": "Fiscalía",
+      "type": "ORGANISMO_PUBLICO",
+      "subtype": "Institución pública",
+      "role": "",
+      "evidence": "s medidas urgentes- las capacidades de la Unidad de Análisis Financiero (UAF), creada hace 23 años en un contexto criminal muy distinto al de hoy. La Fiscalía Metropolitana Sur informó recientemente sobre resultados concretos de la denominada “Operación Tokio”, iniciada a raíz del quíntuple asesinato ocurri",
+      "aliases": [],
+      "start_char": 324,
+      "end_char": 332,
+      "confidence": "ALTA",
+      "signals": [
+        "gliner2",
+        "patron_organismo_publico",
+        "span_exactamente_validado"
+      ]
+    },
+    {
+      "mention": "Fiscalía Metropolitana Sur",
+      "canonical_name": "Fiscalía Metropolitana Sur",
+      "type": "ORGANISMO_PUBLICO",
+      "subtype": "Institución pública",
+      "role": "",
+      "evidence": "s medidas urgentes- las capacidades de la Unidad de Análisis Financiero (UAF), creada hace 23 años en un contexto criminal muy distinto al de hoy. La Fiscalía Metropolitana Sur informó recientemente sobre resultados concretos de la denominada “Operación Tokio”, iniciada a raíz del quíntuple asesinato ocurrido en 2024 en una",
+      "aliases": [],
+      "start_char": 324,
+      "end_char": 350,
+      "confidence": "ALTA",
+      "signals": [
+        "gliner2",
+        "patron_organismo_publico",
+        "span_exactamente_validado"
+      ]
+    },
+    {
+      "mention": "Ministerio de Hacienda",
+      "canonical_name": "Ministerio de Hacienda",
+      "type": "ORGANISMO_PUBLICO",
+      "subtype": "Institución pública",
+      "role": "",
+      "evidence": "crimen organizado asentadas en todas las regiones de Chile. Por ello, claramente se necesita revisar las capacidades de la UAF, sacarla del alero del Ministerio de Hacienda y ponerla bajo el del Ministerio de Seguridad Pública. Se requiere también dotarla de mayores capacidades o, de lo contrario, su cooperación al siste",
+      "aliases": [],
+      "start_char": 4160,
+      "end_char": 4182,
+      "confidence": "ALTA",
+      "signals": [
+        "gliner2",
+        "patron_organismo_publico",
+        "span_exactamente_validado"
+      ]
+    },
+    {
+      "mention": "Ministerio de Seguridad Pública",
+      "canonical_name": "Ministerio de Seguridad Pública",
+      "type": "ORGANISMO_PUBLICO",
+      "subtype": "Institución pública",
+      "role": "",
+      "evidence": "ones de Chile. Por ello, claramente se necesita revisar las capacidades de la UAF, sacarla del alero del Ministerio de Hacienda y ponerla bajo el del Ministerio de Seguridad Pública. Se requiere también dotarla de mayores capacidades o, de lo contrario, su cooperación al sistema nacional de inteligencia será insuficiente. Asimism",
+      "aliases": [],
+      "start_char": 4205,
+      "end_char": 4236,
+      "confidence": "ALTA",
+      "signals": [
+        "gliner2",
+        "patron_organismo_publico",
+        "span_exactamente_validado"
+      ]
+    },
+    {
+      "mention": "Servicio de Impuestos Internos",
+      "canonical_name": "Servicio de Impuestos Internos",
+      "type": "ORGANISMO_PUBLICO",
+      "subtype": "Administración tributaria",
+      "role": "",
+      "evidence": "ayores capacidades o, de lo contrario, su cooperación al sistema nacional de inteligencia será insuficiente. Asimismo, se torna imprescindible que el Servicio de Impuestos Internos (SII) se querelle en todos los casos en que se utilizan empresas de fachada para lavar activos o justificar ingresos ilegales. Hasta la fecha, solo s",
+      "aliases": [
+        "SII"
+      ],
+      "start_char": 4420,
+      "end_char": 4450,
+      "confidence": "ALTA",
+      "signals": [
+        "diccionario_institucional",
+        "gliner2",
+        "patron_organismo_publico",
+        "span_exactamente_validado"
+      ]
+    },
+    {
+      "mention": "Unidad de Análisis Financiero",
+      "canonical_name": "Unidad de Análisis Financiero",
+      "type": "ORGANISMO_PUBLICO",
+      "subtype": "Unidad de inteligencia financiera",
+      "role": "",
+      "evidence": "ración Tokio” Es imprescindible tomarse en serio el sistema antilavado de activos, fortaleciendo –entre otras medidas urgentes- las capacidades de la Unidad de Análisis Financiero (UAF), creada hace 23 años en un contexto criminal muy distinto al de hoy. La Fiscalía Metropolitana Sur informó recientemente sobre resultados concr",
+      "aliases": [
+        "UAF"
+      ],
+      "start_char": 216,
+      "end_char": 245,
+      "confidence": "ALTA",
+      "signals": [
+        "diccionario_institucional",
+        "gliner2",
+        "patron_organismo_publico",
+        "span_exactamente_validado"
+      ]
+    },
+    {
+      "mention": "Antofagasta",
+      "canonical_name": "Antofagasta",
+      "type": "CIUDAD_COMUNA",
+      "subtype": "",
+      "role": "",
+      "evidence": "s bancarios del mismo tipo, por 13.5 millones de dólares y que, se estima, pueden llegar a más de US$ 30 millones. Según un estudio de la Fiscalía de Antofagasta, en 2025 se proyectaba que el crimen organizado generaría utilidades netas por 4 mil millones de dólares en Chile, en un negocio cuyo margen de ganan",
+      "aliases": [],
+      "start_char": 1736,
+      "end_char": 1747,
+      "confidence": "MEDIA",
+      "signals": [
+        "gliner2",
+        "span_exactamente_validado"
+      ]
+    },
+    {
+      "mention": "Lampa",
+      "canonical_name": "Lampa",
+      "type": "CIUDAD_COMUNA",
+      "subtype": "",
+      "role": "",
+      "evidence": "cientemente sobre resultados concretos de la denominada “Operación Tokio”, iniciada a raíz del quíntuple asesinato ocurrido en 2024 en una parcela en Lampa, crimen en el cual una de las partícipes perdió un teléfono celular, aparato convertido en el hilo de Ariadna que permitió ir armando el mapa del lav",
+      "aliases": [],
+      "start_char": 511,
+      "end_char": 516,
+      "confidence": "MEDIA",
+      "signals": [
+        "gliner2",
+        "span_exactamente_validado"
+      ]
+    },
+    {
+      "mention": "criptomonedas",
+      "canonical_name": "criptomonedas",
+      "type": "CRIPTOACTIVO",
+      "subtype": "",
+      "role": "",
+      "evidence": "r medio de cuentas bancarias chilenas, desde donde eran diseminados hacia otros países, principalmente Colombia, utilizando para ello aplicaciones de criptomonedas que cualquier persona puede descargar desde su teléfono. No es la primera vez que se escucha algo semejante. El año pasado otra investigación, relaci",
+      "aliases": [],
+      "start_char": 1320,
+      "end_char": 1333,
+      "confidence": "MEDIA",
+      "signals": [
+        "gliner2",
+        "span_exactamente_validado"
+      ]
+    },
+    {
+      "mention": "comercio sexual",
+      "canonical_name": "comercio sexual",
+      "type": "DELITO",
+      "subtype": "",
+      "role": "",
+      "evidence": "e muchas personas dispuestas a abrir cuentas para que dineros obtenidos gracias a la extorsión, el secuestro, el sicariato, el tráfico de drogas o el comercio sexual se integren al sistema formal. Además, es menester la existencia de una intrincada red de empresas de papel y cuentas de criptomonedas en el extranje",
+      "aliases": [],
+      "start_char": 2642,
+      "end_char": 2657,
+      "confidence": "MEDIA",
+      "signals": [
+        "gliner2",
+        "span_exactamente_validado"
+      ]
+    },
+    {
+      "mention": "crimen organizado",
+      "canonical_name": "crimen organizado",
+      "type": "DELITO",
+      "subtype": "",
+      "role": "",
+      "evidence": "Lavado de activos y crimen organizado en Chile: el caso de la “Operación Tokio” Es imprescindible tomarse en serio el sistema antilavado de activos, fortaleciendo –entre otras medidas urg",
+      "aliases": [],
+      "start_char": 20,
+      "end_char": 37,
+      "confidence": "MEDIA",
+      "signals": [
+        "gliner2",
+        "span_exactamente_validado"
+      ]
+    },
+    {
+      "mention": "extorsión",
+      "canonical_name": "extorsión",
+      "type": "DELITO",
+      "subtype": "",
+      "role": "",
+      "evidence": "de mucha experticia en el funcionamiento del sistema. También, de muchas personas dispuestas a abrir cuentas para que dineros obtenidos gracias a la extorsión, el secuestro, el sicariato, el tráfico de drogas o el comercio sexual se integren al sistema formal. Además, es menester la existencia de una intrin",
+      "aliases": [],
+      "start_char": 2577,
+      "end_char": 2586,
+      "confidence": "MEDIA",
+      "signals": [
+        "gliner2",
+        "span_exactamente_validado"
+      ]
+    },
+    {
+      "mention": "secuestro",
+      "canonical_name": "secuestro",
+      "type": "DELITO",
+      "subtype": "",
+      "role": "",
+      "evidence": "itió ir armando el mapa del lavado de activos de “Los Piratas de Aragua”, misma facción del Tren de Aragua (TDA) implicada, entre otros hechos, en el secuestro y homicidio del teniente venezolano Ronald Ojeda. El fiscal Héctor Barros, a cargo de la investigación, informó que las eficientes indagatorias reali",
+      "aliases": [],
+      "start_char": 785,
+      "end_char": 794,
+      "confidence": "MEDIA",
+      "signals": [
+        "gliner2",
+        "span_exactamente_validado"
+      ]
+    },
+    {
+      "mention": "sicariato",
+      "canonical_name": "sicariato",
+      "type": "DELITO",
+      "subtype": "",
+      "role": "",
+      "evidence": "uncionamiento del sistema. También, de muchas personas dispuestas a abrir cuentas para que dineros obtenidos gracias a la extorsión, el secuestro, el sicariato, el tráfico de drogas o el comercio sexual se integren al sistema formal. Además, es menester la existencia de una intrincada red de empresas de pape",
+      "aliases": [],
+      "start_char": 2605,
+      "end_char": 2614,
+      "confidence": "MEDIA",
+      "signals": [
+        "gliner2",
+        "span_exactamente_validado"
+      ]
+    },
+    {
+      "mention": "tráfico de drogas",
+      "canonical_name": "tráfico de drogas",
+      "type": "DELITO",
+      "subtype": "",
+      "role": "",
+      "evidence": "del sistema. También, de muchas personas dispuestas a abrir cuentas para que dineros obtenidos gracias a la extorsión, el secuestro, el sicariato, el tráfico de drogas o el comercio sexual se integren al sistema formal. Además, es menester la existencia de una intrincada red de empresas de papel y cuentas de criptom",
+      "aliases": [],
+      "start_char": 2619,
+      "end_char": 2636,
+      "confidence": "MEDIA",
+      "signals": [
+        "gliner2",
+        "span_exactamente_validado"
+      ]
+    },
+    {
+      "mention": "BancoEstado",
+      "canonical_name": "BancoEstado",
+      "type": "INSTITUCION_FINANCIERA",
+      "subtype": "",
+      "role": "",
+      "evidence": "dos, que era un funcionario de dicha empresa. Para lavar activos de origen ilícito, este sujeto gestionaba cuentas en otras entidades bancarias: BCI, BancoEstado, Scotiabank y Banco Falabella. Hacer transitar 80 millones de dólares por medio de la banca requiere de mucha experticia en el funcionamiento del sis",
+      "aliases": [],
+      "start_char": 2315,
+      "end_char": 2326,
+      "confidence": "MEDIA",
+      "signals": [
+        "gliner2",
+        "span_exactamente_validado"
+      ]
+    },
+    {
+      "mention": "BCI",
+      "canonical_name": "BCI",
+      "type": "INSTITUCION_FINANCIERA",
+      "subtype": "",
+      "role": "",
+      "evidence": "etenidos, que era un funcionario de dicha empresa. Para lavar activos de origen ilícito, este sujeto gestionaba cuentas en otras entidades bancarias: BCI, BancoEstado, Scotiabank y Banco Falabella. Hacer transitar 80 millones de dólares por medio de la banca requiere de mucha experticia en el funcionam",
+      "aliases": [],
+      "start_char": 2310,
+      "end_char": 2313,
+      "confidence": "MEDIA",
+      "signals": [
+        "gliner2",
+        "span_exactamente_validado"
+      ]
+    },
+    {
+      "mention": "Scotiabank",
+      "canonical_name": "Scotiabank",
+      "type": "INSTITUCION_FINANCIERA",
+      "subtype": "",
+      "role": "",
+      "evidence": "un funcionario de dicha empresa. Para lavar activos de origen ilícito, este sujeto gestionaba cuentas en otras entidades bancarias: BCI, BancoEstado, Scotiabank y Banco Falabella. Hacer transitar 80 millones de dólares por medio de la banca requiere de mucha experticia en el funcionamiento del sistema. Tambié",
+      "aliases": [],
+      "start_char": 2328,
+      "end_char": 2338,
+      "confidence": "MEDIA",
+      "signals": [
+        "gliner2",
+        "span_exactamente_validado"
+      ]
+    },
+    {
+      "mention": "Lampa",
+      "canonical_name": "Lampa",
+      "type": "LUGAR",
+      "subtype": "",
+      "role": "",
+      "evidence": "cientemente sobre resultados concretos de la denominada “Operación Tokio”, iniciada a raíz del quíntuple asesinato ocurrido en 2024 en una parcela en Lampa, crimen en el cual una de las partícipes perdió un teléfono celular, aparato convertido en el hilo de Ariadna que permitió ir armando el mapa del lav",
+      "aliases": [],
+      "start_char": 511,
+      "end_char": 516,
+      "confidence": "MEDIA",
+      "signals": [
+        "gliner2",
+        "span_exactamente_validado"
+      ]
+    },
+    {
+      "mention": "Fuerzas Armadas",
+      "canonical_name": "Fuerzas Armadas",
+      "type": "ORGANISMO_PUBLICO",
+      "subtype": "",
+      "role": "",
+      "evidence": "Tiene abogados y contadores, y cada vez se hace más evidente la corrupción que ha ido permeando poco a poco a ambas policías, así como a Gendarmería, Fuerzas Armadas y también la Fiscalía. Hablamos acá de los órganos que constituyen la primera línea de contención, una barrera que se advierte cada vez más porosa. H",
+      "aliases": [],
+      "start_char": 3164,
+      "end_char": 3179,
+      "confidence": "MEDIA",
+      "signals": [
+        "gliner2",
+        "span_exactamente_validado"
+      ]
+    },
+    {
+      "mention": "Gendarmería",
+      "canonical_name": "Gendarmería",
+      "type": "ORGANISMO_PUBLICO",
+      "subtype": "",
+      "role": "",
+      "evidence": "ara hacerlo. Tiene abogados y contadores, y cada vez se hace más evidente la corrupción que ha ido permeando poco a poco a ambas policías, así como a Gendarmería, Fuerzas Armadas y también la Fiscalía. Hablamos acá de los órganos que constituyen la primera línea de contención, una barrera que se advierte cada",
+      "aliases": [],
+      "start_char": 3151,
+      "end_char": 3162,
+      "confidence": "MEDIA",
+      "signals": [
+        "gliner2",
+        "span_exactamente_validado"
+      ]
+    },
+    {
+      "mention": "policías",
+      "canonical_name": "policías",
+      "type": "ORGANISMO_PUBLICO",
+      "subtype": "",
+      "role": "",
+      "evidence": "ta con la capacidad para hacerlo. Tiene abogados y contadores, y cada vez se hace más evidente la corrupción que ha ido permeando poco a poco a ambas policías, así como a Gendarmería, Fuerzas Armadas y también la Fiscalía. Hablamos acá de los órganos que constituyen la primera línea de contención, una barre",
+      "aliases": [],
+      "start_char": 3130,
+      "end_char": 3138,
+      "confidence": "MEDIA",
+      "signals": [
+        "gliner2",
+        "span_exactamente_validado"
+      ]
+    },
+    {
+      "mention": "Chile",
+      "canonical_name": "Chile",
+      "type": "PAIS",
+      "subtype": "",
+      "role": "",
+      "evidence": "Lavado de activos y crimen organizado en Chile: el caso de la “Operación Tokio” Es imprescindible tomarse en serio el sistema antilavado de activos, fortaleciendo –entre otras medidas urgentes- la",
+      "aliases": [],
+      "start_char": 41,
+      "end_char": 46,
+      "confidence": "MEDIA",
+      "signals": [
+        "gliner2",
+        "span_exactamente_validado"
+      ]
+    },
+    {
+      "mention": "Colombia",
+      "canonical_name": "Colombia",
+      "type": "PAIS",
+      "subtype": "",
+      "role": "",
+      "evidence": "dos fueron incorporados a la economía formal por medio de cuentas bancarias chilenas, desde donde eran diseminados hacia otros países, principalmente Colombia, utilizando para ello aplicaciones de criptomonedas que cualquier persona puede descargar desde su teléfono. No es la primera vez que se escucha algo",
+      "aliases": [],
+      "start_char": 1273,
+      "end_char": 1281,
+      "confidence": "MEDIA",
+      "signals": [
+        "gliner2",
+        "span_exactamente_validado"
+      ]
+    },
+    {
+      "mention": "Gendarmería",
+      "canonical_name": "Gendarmería",
+      "type": "PARTIDO_POLITICO",
+      "subtype": "",
+      "role": "",
+      "evidence": "ara hacerlo. Tiene abogados y contadores, y cada vez se hace más evidente la corrupción que ha ido permeando poco a poco a ambas policías, así como a Gendarmería, Fuerzas Armadas y también la Fiscalía. Hablamos acá de los órganos que constituyen la primera línea de contención, una barrera que se advierte cada",
+      "aliases": [],
+      "start_char": 3151,
+      "end_char": 3162,
+      "confidence": "MEDIA",
+      "signals": [
+        "gliner2",
+        "span_exactamente_validado"
+      ]
+    },
+    {
+      "mention": "BancoEstado",
+      "canonical_name": "BancoEstado",
+      "type": "PERSONA_JURIDICA",
+      "subtype": "",
+      "role": "",
+      "evidence": "dos, que era un funcionario de dicha empresa. Para lavar activos de origen ilícito, este sujeto gestionaba cuentas en otras entidades bancarias: BCI, BancoEstado, Scotiabank y Banco Falabella. Hacer transitar 80 millones de dólares por medio de la banca requiere de mucha experticia en el funcionamiento del sis",
+      "aliases": [],
+      "start_char": 2315,
+      "end_char": 2326,
+      "confidence": "MEDIA",
+      "signals": [
+        "gliner2",
+        "span_exactamente_validado"
+      ]
+    },
+    {
+      "mention": "Santander",
+      "canonical_name": "Santander",
+      "type": "PERSONA_JURIDICA",
+      "subtype": "",
+      "role": "",
+      "evidence": "lo invertido. Lo más preocupante, en el caso de la “Operación Tokio”, es que hubo cinco bancos locales involucrados, siendo el principal de ellos el Santander, infiltrado por el Tren de Aragua a través de uno de los detenidos, que era un funcionario de dicha empresa. Para lavar activos de origen ilícito, es",
+      "aliases": [],
+      "start_char": 2092,
+      "end_char": 2101,
+      "confidence": "MEDIA",
+      "signals": [
+        "gliner2",
+        "span_exactamente_validado"
+      ]
+    },
+    {
+      "mention": "Ronald Ojeda",
+      "canonical_name": "Ronald Ojeda",
+      "type": "PERSONA_NATURAL",
+      "subtype": "",
+      "role": "",
+      "evidence": "de “Los Piratas de Aragua”, misma facción del Tren de Aragua (TDA) implicada, entre otros hechos, en el secuestro y homicidio del teniente venezolano Ronald Ojeda. El fiscal Héctor Barros, a cargo de la investigación, informó que las eficientes indagatorias realizadas con la PDI han evidenciado hasta ahora la e",
+      "aliases": [],
+      "start_char": 831,
+      "end_char": 843,
+      "confidence": "MEDIA",
+      "signals": [
+        "gliner2",
+        "span_exactamente_validado"
+      ]
+    }
+  ],
   "relations": [],
-  "stats": {},
-  "engine": {"gliner": true, "llm": false}
+  "stats": {
+    "INSTITUCION_FINANCIERA": 4,
+    "ORGANISMO_PUBLICO": 9,
+    "CIUDAD_COMUNA": 2,
+    "CRIPTOACTIVO": 1,
+    "DELITO": 6,
+    "LUGAR": 1,
+    "PAIS": 2,
+    "PARTIDO_POLITICO": 1,
+    "PERSONA_JURIDICA": 2,
+    "PERSONA_NATURAL": 1
+  },
+  "engine": {
+    "gliner": true,
+    "llm": false,
+    "llm_requested": true,
+    "llm_fallback": true,
+    "gliner_model": "fastino/gliner2-base-v1",
+    "llm_model": "gpt-5",
+    "gliner_error": "",
+    "llm_error": "Sin créditos disponibles en la API de OpenAI; se usó GLiNER2 + reglas como fallback."
+  }
 }
