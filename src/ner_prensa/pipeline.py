@@ -20,7 +20,9 @@ def _env_bool(name: str, default: bool) -> bool:
 def analyze_url(url: str) -> AnalysisResult:
     article = fetch_article(url)
     use_gliner = _env_bool("USE_GLINER", True)
-    use_llm = _env_bool("USE_LLM", True) and bool(os.getenv("OPENAI_API_KEY"))
+    llm_requested = _env_bool("USE_LLM", True)
+    has_api_key = bool(os.getenv("OPENAI_API_KEY"))
+    use_llm = llm_requested and has_api_key
 
     candidates: list[Entity] = []
     gliner_error = ""
@@ -30,8 +32,18 @@ def analyze_url(url: str) -> AnalysisResult:
         except Exception as exc:
             gliner_error = str(exc)
 
-    # Si GLiNER falla y hay LLM, el LLM puede trabajar sin candidatos; si no, se informa resultado vacío.
-    entities, relations = adjudicate_with_llm(article.text, candidates) if use_llm else (candidates, [])
+    if use_llm:
+        entities, relations, llm_meta = adjudicate_with_llm(article.text, candidates)
+    else:
+        entities, relations = candidates, []
+        if llm_requested and not has_api_key:
+            llm_meta = {
+                "llm_used": False,
+                "llm_fallback": True,
+                "llm_error": "OPENAI_API_KEY no configurada; se usó GLiNER2 + reglas.",
+            }
+        else:
+            llm_meta = {"llm_used": False, "llm_fallback": False, "llm_error": ""}
 
     refined: list[Entity] = []
     for e in entities:
@@ -54,9 +66,12 @@ def analyze_url(url: str) -> AnalysisResult:
         stats=stats,
         engine={
             "gliner": use_gliner,
-            "llm": use_llm,
+            "llm": bool(llm_meta["llm_used"]),
+            "llm_requested": llm_requested,
+            "llm_fallback": bool(llm_meta["llm_fallback"]),
             "gliner_model": os.getenv("GLINER_MODEL", "fastino/gliner2-base-v1"),
-            "llm_model": os.getenv("OPENAI_MODEL", "gpt-5") if use_llm else "",
+            "llm_model": os.getenv("OPENAI_MODEL", "gpt-5") if llm_requested else "",
             "gliner_error": gliner_error,
+            "llm_error": str(llm_meta["llm_error"]),
         },
     )
