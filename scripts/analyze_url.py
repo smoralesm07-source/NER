@@ -21,7 +21,15 @@ def main() -> int:
     out = ROOT / args.output
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(result.model_dump(), ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"OK: {len(result.entities)} entidades -> {out}")
+
+    llm_error = str(result.engine.get("llm_error", ""))
+    if llm_error:
+        print(f"AVISO LLM: {llm_error}", file=sys.stderr)
+    print(
+        f"OK: {len(result.entities)} entidades -> {out} "
+        f"| GLiNER={'sí' if result.engine.get('gliner') else 'no'} "
+        f"| LLM={'sí' if result.engine.get('llm') else 'no'}"
+    )
     return 0
 
 
