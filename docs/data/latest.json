@@ -1,0 +1,14 @@
+{
+  "article": {
+    "url": "",
+    "title": "Aún no hay una noticia analizada",
+    "author": "",
+    "date": "",
+    "site_name": "",
+    "text": "Ejecuta el workflow ‘Analizar noticia’ desde la pestaña Actions y pega la URL. El resultado aparecerá aquí automáticamente."
+  },
+  "entities": [],
+  "relations": [],
+  "stats": {},
+  "engine": {"gliner": true, "llm": false}
+}
