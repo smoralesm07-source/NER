@@ -1,0 +1,90 @@
+name: Analizar solicitud desde Pages
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: analyze-news
+  cancel-in-progress: false
+
+jobs:
+  authorize:
+    if: startsWith(github.event.issue.title, '[NER]')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verificar propietario
+        if: github.actor != github.repository_owner
+        run: |
+          echo "Sólo el propietario del repositorio puede activar análisis desde Issues." >&2
+          exit 1
+
+  analyze:
+    needs: authorize
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5' }}
+      USE_GLINER: 'true'
+      USE_LLM: 'true'
+      GLINER_MODEL: fastino/gliner2-base-v1
+      HF_HOME: ${{ github.workspace }}/.cache/huggingface
+      ISSUE_BODY: ${{ github.event.issue.body }}
+
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - uses: actions/cache@v4
+        with:
+          path: .cache/huggingface
+          key: hf-gliner2-base-v1-${{ runner.os }}
+
+      - name: Extraer URL de la solicitud
+        shell: python
+        run: |
+          import os, re
+          from pathlib import Path
+          body = os.environ.get('ISSUE_BODY', '')
+          m = re.search(r'(?im)^URL:\s*(https?://\S+)\s*$', body)
+          if not m:
+              raise SystemExit('No se encontró una línea URL: https://... válida')
+          url = m.group(1).rstrip('.,;)')
+          Path('news_url.txt').write_text(url, encoding='utf-8')
+          print('URL aceptada:', url)
+
+      - name: Instalar motor
+        run: pip install -e '.[local]'
+
+      - name: Analizar noticia
+        run: |
+          NEWS_URL="$(cat news_url.txt)"
+          python scripts/analyze_url.py "$NEWS_URL" --output docs/data/latest.json
+
+      - name: Guardar resultado
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data/latest.json
+          if ! git diff --cached --quiet; then
+            git commit -m "data: análisis NER desde Pages"
+            git push
+          fi
+
+      - name: Cerrar solicitud
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue comment "${{ github.event.issue.number }}" --body "Análisis completado y resultado guardado en docs/data/latest.json. GitHub Pages se actualizará con el nuevo resultado."
+          gh issue close "${{ github.event.issue.number }}"

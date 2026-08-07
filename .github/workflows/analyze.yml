@@ -1,0 +1,83 @@
+name: Analizar noticia
+
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: 'URL completa de la noticia'
+        required: true
+        type: string
+      use_gliner:
+        description: 'Usar GLiNER2 local'
+        required: true
+        default: true
+        type: boolean
+      use_llm:
+        description: 'Usar LLM como adjudicador (requiere OPENAI_API_KEY)'
+        required: true
+        default: true
+        type: boolean
+      llm_model:
+        description: 'Modelo OpenAI'
+        required: true
+        default: 'gpt-5'
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: analyze-news
+  cancel-in-progress: false
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      OPENAI_MODEL: ${{ inputs.llm_model }}
+      USE_GLINER: ${{ inputs.use_gliner }}
+      USE_LLM: ${{ inputs.use_llm }}
+      GLINER_MODEL: fastino/gliner2-base-v1
+      HF_HOME: ${{ github.workspace }}/.cache/huggingface
+
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Cache Hugging Face
+        if: ${{ inputs.use_gliner }}
+        uses: actions/cache@v4
+        with:
+          path: .cache/huggingface
+          key: hf-gliner2-base-v1-${{ runner.os }}
+
+      - name: Instalar motor
+        run: |
+          if [ "${USE_GLINER}" = "true" ]; then
+            pip install -e '.[local]'
+          else
+            pip install -e .
+          fi
+
+      - name: Analizar URL
+        run: python scripts/analyze_url.py "${{ inputs.url }}" --output docs/data/latest.json
+
+      - name: Guardar resultado en el repositorio
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data/latest.json
+          if git diff --cached --quiet; then
+            echo "Sin cambios en latest.json"
+          else
+            git commit -m "data: actualizar análisis NER"
+            git push
+          fi
